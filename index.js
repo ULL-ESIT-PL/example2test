@@ -7,9 +7,15 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
   let result = '';
   let program = `${executable} test/examples/${exampleInput}`;
   let expectedFile = `test/examples/${exampleInput}.expected`;
+  let child;
   try {
     let expected = fs.readFileSync(expectedFile, 'utf8');
-    let child = exec(program);
+    try {
+      if (fs.existsSync(program)) {
+        child = exec(program);
+    } catch(err) {
+      throw Error(`Can't find '${program}'\n${err}`);
+    }
     let clean = (err) => {
       done();
       child.kill();
