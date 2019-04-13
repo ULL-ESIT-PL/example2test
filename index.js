@@ -9,11 +9,6 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
   let program = `${executable} ${inputFile}`;
   let expectedFile = `test/examples/${exampleInput}.expected`;
   let child;
-  let clean = (err) => {
-    done();
-    //child.kill();
-    throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
-  };
 
   try {
     let expected = fs.readFileSync(expectedFile, 'utf8');
@@ -32,10 +27,12 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
       done();
     });
 
-    child.on('uncaughtException', clean)
+    child.on('uncaughtException', (err) => {
+      throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
+    });
+
   } catch (err) {
     throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
-    //clean(err);
   }
 };
 
