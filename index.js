@@ -8,6 +8,12 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
   let program = `${executable} test/examples/${exampleInput}`;
   let expectedFile = `test/examples/${exampleInput}.expected`;
   let child;
+  let clean = (err) => {
+    done();
+    child.kill();
+    throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
+  };
+
   try {
     let expected = fs.readFileSync(expectedFile, 'utf8');
     try {
@@ -17,12 +23,6 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
     }catch(err) {
       throw Error(`Can't find '${program}'\n${err}`);
     }
-    let clean = (err) => {
-      done();
-      child.kill();
-      throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
-    };
-
     child.stdout.on('data', function(data) {
       result += data;
     });
