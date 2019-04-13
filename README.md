@@ -81,7 +81,6 @@ let e2t = require('@ull-esit-pl/example2test');
 
 describe("Regular Expressions in Egg", function() {
   let runTest = (programName, done) => {
-    debugger;
     e2t({
       exampleInput: programName+'.egg', 
       executable: 'bin/egg.js', 
