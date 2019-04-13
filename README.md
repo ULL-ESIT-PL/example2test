@@ -10,8 +10,8 @@ This package may help when you follow a methodology like this one:
 3. You check the output. If it looks good then 
 4. The you run your program again but this time redirecting the output to a file
 5. Then you make mocha test that 
-  1. Runs the program against that input file and 
-  2. Check the new output is the same as in the previously redirected file
+    1. Runs the program against that input file and 
+    2. Check the new output is the same as in the previously redirected file
 6. You repeat the cycle
 
 
