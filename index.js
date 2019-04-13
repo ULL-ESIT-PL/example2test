@@ -5,7 +5,8 @@ let fs = require('fs');
 
 let runTest = ({executable, exampleInput, assertion, done}) => {
   let result = '';
-  let program = `${executable} test/examples/${exampleInput}`;
+  let inputFile = `test/examples/${exampleInput}`;
+  let program = `${executable} ${inputFile}`;
   let expectedFile = `test/examples/${exampleInput}.expected`;
   let child;
   let clean = (err) => {
@@ -17,7 +18,7 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
   try {
     let expected = fs.readFileSync(expectedFile, 'utf8');
     try {
-      if (fs.existsSync(program)) {
+      if (fs.existsSync(inputFile)) {
         child = exec(program);
       }
     }catch(err) {
