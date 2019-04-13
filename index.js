@@ -17,11 +17,10 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
 
   try {
     let expected = fs.readFileSync(expectedFile, 'utf8');
-    try {
-      if (fs.existsSync(inputFile)) {
-        child = exec(program);
-      }
-    } else {
+    if (fs.existsSync(inputFile)) {
+      child = exec(program);
+    }
+    else {
       throw Error(`Can't find file '${inputFile}'. Can not execute program '${program}'\n${err}`);
     }
     child.stdout.on('data', function(data) {
