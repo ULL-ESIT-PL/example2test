@@ -70,7 +70,6 @@ and then configure it for our needs:
 
 ```js
   let runTest = (programName, done) => {
-    debugger;
     e2t({
       exampleInput: programName+'.egg', 
       executable: 'bin/egg.js', 
