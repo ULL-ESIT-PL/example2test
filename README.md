@@ -1,6 +1,16 @@
 ## Methodology
 
-### Generating the files
+This package helps when you follow a methodology
+
+1. Code a new feature for your program
+2. Run your program against a input file that test the new feature
+2. Run your program again and redirect the output 
+3. Check the output. If it looks good then you make a test that 
+  1. Runs the program against that input file and 
+  2. Check the new output is the same as in the previously redirected file
+
+
+### Example. Generating the files
 
 Each time we add a new feature to our program (here `bin/egg.js`) we usually run it with an input file (here 
 `examples/regexp-global.egg`) and visually check the output to see if it is what we expected:
