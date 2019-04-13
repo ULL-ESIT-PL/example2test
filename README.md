@@ -24,7 +24,7 @@ We also copy the input file (here `examples/regexp-global.egg`) to `test/example
 [~/.../crguezl-egg(private2019)]$ cp examples/regexp-global.egg test/examples/
 ```
 
-At the end, you'll have a hierarchy like this:
+At the end, you'll have a hierarchy similar to this:
 
 ```
 [~/.../crguezl-egg(private2019)]$ tree test
