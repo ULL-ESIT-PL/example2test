@@ -3,7 +3,7 @@ let ins = (x) => insp(x, {depth:null});
 let exec = require('child_process').exec;
 let fs = require('fs');
 
-let runTest = (executable, programName, assertion, done) => {
+let runTest = ({executable, programName, assertion, done}) => {
   let result = '';
   let expected = fs.readFileSync(`test/examples/${programName}.expected`, 'utf8');
   
