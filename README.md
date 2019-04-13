@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/%40ull-esit-pl%2Fexample2test.svg)](https://badge.fury.io/js/%40ull-esit-pl%2Fexample2test)
+
+
 ## Methodology
 
 This package helps when you follow a methodology
