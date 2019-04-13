@@ -3,7 +3,7 @@
 
 ## Methodology
 
-This package helps when you follow a methodology
+This package may help when you follow a methodology like this one:
 
 1. Code a new feature for your program
 2. Run your program against a input file that test the new feature
