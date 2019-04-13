@@ -39,6 +39,26 @@ test
 
 ## Example of use
 
+Now, inside our test program q we require the module:
+
+```js
+let e2t = require('@ull-esit-pl/example2test');
+```
+
+and then configure it for our needs:
+
+```js
+  let runTest = (programName, done) => {
+    debugger;
+    e2t({
+      exampleInput: programName+'.egg', 
+      executable: 'bin/egg.js', 
+      assertion: (result, expected) => result.trim().should.eql(expected.trim()),
+      done: done, 
+    });
+  };
+``` 
+
 Now adding a test that checks if running the executable on the input gives the expected result is just
 a matter of addding three new lines like this:
 
@@ -48,7 +68,7 @@ a matter of addding three new lines like this:
   });
 ```
 
-See a full example:
+See the full code for the example:
 
 **[~/.../crguezl-egg(private2019)]$ cat test/regexp.js**
 
