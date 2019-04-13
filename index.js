@@ -13,7 +13,8 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
     try {
       if (fs.existsSync(program)) {
         child = exec(program);
-    } catch(err) {
+      }
+    }catch(err) {
       throw Error(`Can't find '${program}'\n${err}`);
     }
     let clean = (err) => {
