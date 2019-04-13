@@ -5,10 +5,11 @@
 
 This package may help when you follow a methodology like this one:
 
-1. Code a new feature for your program
-2. Run your program against a input file that test the new feature
-2. Run your program again and redirect the output 
-3. Check the output. If it looks good then you make a test that 
+1. You code a new feature for your program
+2. You run your program against a new input file that test the new feature
+3. You check the output. If it looks good then 
+4. The you run your program again but this time redirecting the output to a file
+5. Then you make mocha test that 
   1. Runs the program against that input file and 
   2. Check the new output is the same as in the previously redirected file
 
