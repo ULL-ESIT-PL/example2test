@@ -21,4 +21,4 @@ let runTest = (executable, programName, assertion, done) => {
   });
 };
 
-export = runTest;
+module.exports = runTest;
