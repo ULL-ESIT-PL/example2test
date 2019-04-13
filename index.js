@@ -10,6 +10,11 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
   try {
     let expected = fs.readFileSync(expectedFile, 'utf8');
     let child = exec(program);
+    let clean = (err) => {
+      done();
+      child.kill();
+      throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
+    };
 
     child.stdout.on('data', function(data) {
       result += data;
@@ -19,10 +24,10 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
       assertion(result, expected); // result.trim().should.eql(expected.trim());
       done();
     });
+
+    child.on('uncaughtException', clean)
   } catch (err) {
-    done();
-    child.kill();
-    throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
+    clean(err);
   }
 };
 
