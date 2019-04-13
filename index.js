@@ -34,7 +34,8 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
 
     child.on('uncaughtException', clean)
   } catch (err) {
-    clean(err);
+    throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
+    //clean(err);
   }
 };
 
