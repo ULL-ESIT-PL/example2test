@@ -39,7 +39,7 @@ test
 
 ## Example of use
 
-Now, inside our test program q we require the module:
+Now, inside our test program we require the module:
 
 ```js
 let e2t = require('@ull-esit-pl/example2test');
