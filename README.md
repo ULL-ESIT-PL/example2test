@@ -8,11 +8,11 @@ This package may help when you follow a methodology like this one:
 1. You code a new feature `f` for your program `p`
 2. You run your program `p` against a new input file `i` that test the new feature `f`
 3. You manually check the output. If it looks good then 
-4. The you run your program again but this time redirecting the output to a file `test/examples/i.expected`
-5. Then you make mocha test that 
+4. You run your program again, but this time redirecting the output to a file `test/examples/i.expected`
+5. Then you make a mocha test that 
     1. Runs the program `p` against that same input file `i` and 
-    2. Check the new output `r` is the same as in the previously redirected file  `test/examples/i.expected`
-6. You repeat the cycle
+    2. Checks up that the new output `r` is the same as in the previously redirected file  `test/examples/i.expected`
+6. You repeat the cycle (forever!)
 
 
 ### Example. Generating the files
