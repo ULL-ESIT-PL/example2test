@@ -22,7 +22,7 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
   } catch (err) {
     done();
     child.kill();
-    throw Error(`There were problems either opening file '${expectedFile}' or executing '`${program}'\n`+err);
+    throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
   }
 };
 
