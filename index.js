@@ -11,7 +11,7 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
   let child;
   let clean = (err) => {
     done();
-    child.kill();
+    //child.kill();
     throw Error(`There were problems either opening file '${expectedFile}' or executing '${program}'\n${err}`);
   };
 
