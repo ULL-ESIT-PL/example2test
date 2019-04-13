@@ -12,6 +12,7 @@ This package may help when you follow a methodology like this one:
 5. Then you make mocha test that 
   1. Runs the program against that input file and 
   2. Check the new output is the same as in the previously redirected file
+6. You repeat the cycle
 
 
 ### Example. Generating the files
