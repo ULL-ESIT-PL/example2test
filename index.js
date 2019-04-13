@@ -21,8 +21,8 @@ let runTest = ({executable, exampleInput, assertion, done}) => {
       if (fs.existsSync(inputFile)) {
         child = exec(program);
       }
-    }catch(err) {
-      throw Error(`Can't find '${program}'\n${err}`);
+    } else {
+      throw Error(`Can't find file '${inputFile}'. Can not execute program '${program}'\n${err}`);
     }
     child.stdout.on('data', function(data) {
       result += data;
