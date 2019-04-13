@@ -3,7 +3,7 @@
 
 ## Methodology
 
-This package may help when you follow a methodology like this one:
+This package may help to automate your testing cycle when you follow a methodology like this one:
 
 1. You code a new feature `f` for your program `p`
 2. You run your program `p` against a new input file `i` that test the new feature `f`
@@ -40,7 +40,7 @@ We also copy the input file (here `examples/regexp-global.egg`) to `test/example
 [~/.../crguezl-egg(private2019)]$ cp examples/regexp-global.egg test/examples/
 ```
 
-At the end, you'll have a hierarchy similar to this:
+At the end, after repeating these steps a few times, you'll have a hierarchy similar to this:
 
 ```
 [~/.../crguezl-egg(private2019)]$ tree test
