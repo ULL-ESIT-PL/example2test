@@ -78,9 +78,6 @@ See the full code for the example:
 **[~/.../crguezl-egg(private2019)]$ cat test/regexp.js**
 
 ```js
-let insp = require("util").inspect;
-let ins = (x) => insp(x, {depth:null});
-let exec = require('child_process').exec;
 var should = require("should");
 let e2t = require('@ull-esit-pl/example2test');
 
@@ -108,4 +105,19 @@ describe("Regular Expressions in Egg", function() {
   });
 
 });
+```
+
+Now you can run the tests:
+
+```
+~/.../crguezl-egg(private2019)]$ npx mocha test/regexp.js 
+
+
+  Regular Expressions in Egg
+    ✓ testing regexp.egg (163ms)
+    ✓ testing regexp-simple.egg (165ms)
+    ✓ testing regexp-global.egg (163ms)
+
+
+  3 passing (500ms)
 ```
