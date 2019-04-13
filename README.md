@@ -13,7 +13,7 @@ This package may help when you follow a methodology like this one:
 6. Then you make a mocha test that 
     1. Runs the program `p` against that same input file `i` and 
     2. Checks up that the new output `r` is the same as in the previously redirected file  `test/examples/i.expected`
-7. You repeat the cycle (forever!)
+7. You repeat the cycle (forever! :repeat: :octocat:)
 
 
 ### Example. Generating the files
