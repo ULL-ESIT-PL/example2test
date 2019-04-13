@@ -16,6 +16,11 @@ the same name of the input file (here `examples/regexp-global.egg`) and the exte
 
 ```
 [~/.../crguezl-egg(private2019)]$ bin/egg.js examples/regexp-global.egg > test/examples/regexp-global.egg.expected
+```
+
+We also copy the input file (here `examples/regexp-global.egg`) to `test/examples`:
+
+```
 [~/.../crguezl-egg(private2019)]$ cp examples/regexp-global.egg test/examples/
 ```
 
