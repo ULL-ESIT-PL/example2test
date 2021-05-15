@@ -137,7 +137,7 @@ Now you can run the tests:
   3 passing (500ms)
 ```
 
-## The executable `maketest``
+## The executable `maketest`
 
 ```
 ➜  eloquentjsegg git:(private2021) make-test --help
