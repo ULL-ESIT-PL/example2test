@@ -6,9 +6,9 @@
 This package may help to automate your testing cycle when you follow a methodology like this one:
 
 1. You code a new feature `f` for your program `p`
-2. You run your program `p` against a new input file `i` that test the new feature `f`
+2. You run your program `p` against a new input file `i` that test the new feature `f`: `p [options] i`
 3. You manually check the output. If it looks good then 
-4. You run your program again, but this time redirecting the output to a file `test/examples/i.expected`
+4. You run your program again, but this time redirecting the output to a file `test/examples/i.expected` like this `p [options] i > test/examples/i.expected`
 5. You also copy the input file `i` next to the expected output in `test/examples/i`
 6. Then you make a mocha test that 
     1. Runs the program `p` against that same input file `i` and 
@@ -16,7 +16,7 @@ This package may help to automate your testing cycle when you follow a methodolo
 7. You repeat the cycle (forever! :repeat:)
 
 
-### Example. Generating the files
+## Example: Generating the files
 
 Each time we add a new feature to our program (here `bin/egg.js`) we usually run it with an input file (here 
 `examples/regexp-global.egg`) and visually check the output to see if it is what we expected:
@@ -58,7 +58,7 @@ test
 1 directory, 8 files
 ```
 
-## Example of use
+## Example: Writing the test
 
 Now, inside our test program we require the module:
 
@@ -135,4 +135,55 @@ Now you can run the tests:
 
 
   3 passing (500ms)
+```
+
+## The executable `maketest``
+
+```
+➜  eloquentjsegg git:(private2021) make-test --help
+Usage: maketest [options] <programName>
+
+Options:
+  -V, --version                      output the version number
+  -c --config <configFileName.json>  Name of the JSON configuration file (default:
+                                     "./.make-test.json")
+  -h, --help                         display help for command
+```
+
+Example of configuration file:
+
+```json
+➜  eloquentjsegg git:(private2021) cat .make-test.json 
+{
+  "executable": "./bin/egg.js",
+  "execOptions": "",
+  "testPrefix": "npx mocha test -g",
+  "defaultExtension": ".egg",
+  "testFolder": "test"
+}
+```
+
+```
+➜  eloquentjsegg git:(private2021) cat examples/regexp-global.egg 
+do {
+  :=(x, RegExp.exec("2015-02-22", r/./)),
+  print(x)
+}
+
+➜  eloquentjsegg git:(private2021) ./bin/make-test.js examples/regexp-global.egg
+examples  regexp-global.egg regexp-global .egg
+["2"]
+Executed "./bin/egg.js  examples/regexp-global.egg > test/examples/regexp-global.egg.expected" succesfully
+Executed "cp examples/regexp-global.egg test/examples/regexp-global.egg" succesfully
+
+
+  Regular Expressions in Egg
+    ✓ testing regexp-global.egg (158ms)
+
+
+  1 passing (163ms)
+
+Executed "npx mocha test -g regexp-global.egg" succesfully
+test/examples/regexp-global.egg
+test/examples/regexp-global.egg.expected
 ```

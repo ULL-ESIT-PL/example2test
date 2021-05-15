@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "make-test": "bin/make-test.js"
+  }
   "repository": {
     "type": "git",
     "url": "https://github.com/ULL-ESIT-PL/example2test.git"
@@ -19,5 +22,9 @@
     "mocha"
   ],
   "author": "Casiano Rodriguez-Leon <casiano.rodriguez.leon@gmail.com> (https://github.com/crguezl)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^7.2.0",
+    "shelljs": "^0.8.4"
+  }
 }
