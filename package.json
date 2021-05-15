@@ -1,6 +1,6 @@
 {
   "name": "@ull-esit-pl/example2test",
-  "version": "1.0.39",
+  "version": "1.1.0",
   "description": "making a test from the cycle: run program then check the output",
   "main": "index.js",
   "scripts": {
